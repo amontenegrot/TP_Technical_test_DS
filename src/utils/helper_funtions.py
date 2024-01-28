@@ -1,6 +1,7 @@
 import os
 
 import uuid
+import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
@@ -30,6 +31,12 @@ def dataviz_structure_categorical(column, fig, dataframe, row, col):
         y=dataframe_new['Count']
     ), row=row, col=col)
 
-def dataviz_structure_numerical_hist(column, fig, dataframe, row, col):
-    trace_n = go.Histogram(x=dataframe[column])
-    fig.append_trace(trace_n, row, col)
+# def dataviz_structure_numerical(column, fig, dataframe):
+#     fig.add_trace(go.Box(y=dataframe[column], name=column,
+#                 marker_color = 'indianred'))
+    
+def dataviz_structure_numerical(column, fig, dataframe, row, col):
+    fig.append_trace(go.Box(
+        y=dataframe[column],
+        name=column
+    ), row=row, col=col)
