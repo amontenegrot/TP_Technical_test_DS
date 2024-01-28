@@ -3,7 +3,6 @@ import os
 import uuid
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 
 
 # Get PATH folder from previous directorys
@@ -30,13 +29,30 @@ def dataviz_structure_categorical(column, fig, dataframe, row, col):
         x=dataframe_new[column],
         y=dataframe_new['Count']
     ), row=row, col=col)
-
-# def dataviz_structure_numerical(column, fig, dataframe):
-#     fig.add_trace(go.Box(y=dataframe[column], name=column,
-#                 marker_color = 'indianred'))
     
 def dataviz_structure_numerical(column, fig, dataframe, row, col):
     fig.append_trace(go.Box(
         y=dataframe[column],
         name=column
     ), row=row, col=col)
+
+def conversion_rate_chart(predictor_var, var_to_predict, dataframe, type='line', order=None):
+    # Generate group data, calculate conversion rate (mean) and multiply by 100
+    df_group = dataframe.groupby(predictor_var)[var_to_predict].mean().mul(100).rename('conversion_rate').reset_index()
+
+    # Generate charts
+    if type=='line': # Useful for continuous ranges
+        fig = px.line(df_group, x=predictor_var, y='conversion_rate',
+                      title=f'Tasa de conversión para la variable "{predictor_var}"'
+                      )
+        fig.show()
+    elif type=='bar': # Useful if data are divided into ranges or are categorical data
+        fig = px.bar(df_group, x=predictor_var, y='conversion_rate',
+                     title=f'Tasa de conversión para la variable "{predictor_var}"'
+                     )
+        fig.show()
+    elif type=='scatter':
+        fig = px.scatter(df_group, x=predictor_var, y='conversion_rate',
+                         title=f'Tasa de conversión para la variable "{predictor_var}"'
+                         )
+        fig.show()
