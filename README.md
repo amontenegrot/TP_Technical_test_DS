@@ -7,7 +7,7 @@ Contamos con una base de datos con las siguientes variables, demográficas y de 
 * **Client_ID:**   El Id del Clinete
 * **Name:** Nombre del cliente
 * **Age:** Edad del Cliente
-* **Location:** Estado donde vivel el Cliente
+* **Location:** Estado donde vive el Cliente
 * **Income:** ingresos del Cliente
 * **TAX:** impuestos que paga el cliente
 * **previous sales_#:** Cantidad de compras que ha realizado en el pasado
