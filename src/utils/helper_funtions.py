@@ -4,6 +4,9 @@ import uuid
 import plotly.express as px
 import plotly.graph_objects as go
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 # Get PATH folder from previous directorys
 def get_path(prev_folders:int=0):
@@ -56,3 +59,22 @@ def conversion_rate_chart(predictor_var, var_to_predict, dataframe, type='line',
                          title=f'Tasa de conversión para la variable "{predictor_var}"'
                          )
         fig.show()
+
+# Tasa de conversión para dos columnas
+def graficar_tc_bivariada(col_list, dataframe, orden=None):
+    tc = dataframe.groupby(col_list)['Sales'].mean().to_frame().reset_index()
+
+    # Gráfica
+    plt.figure(figsize=(13,7))
+    ax = sns.pointplot(x=tc['Sales'], y=tc[col_list[0]], hue=tc[col_list[1]], join=False, order=orden)
+    ax.yaxis.grid(True)
+    ax.xaxis.grid(True)
+    plt.title(f'Tasa de conversión para "{col_list[0]}" y "{col_list[1]}"')
+    plt.xlabel('Tasa de conversión (%)')
+    plt.xlim((0,1))
+  
+    # fig = px.scatter(dataframe, x=tc['Sales'], y=tc[col_list[0]], color=tc[col_list[0]],
+    #                     title=f'Tasa de conversión para {col_list[0]} y {col_list[1]}',
+    #                     # labels={"salary":"Annual Salary (in thousands)"} # customize axis label
+    #                     )
+    # fig.show()
