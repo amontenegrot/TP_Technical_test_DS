@@ -10205,3 +10205,206 @@ AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
                                         verbose=0, warm_start=False))],
          verbose=False)
 2024-01-28 22:37:58,713:INFO:save_model() successfully completed......................................
+2024-01-28 22:52:08,225:INFO:Initializing save_model()
+2024-01-28 22:52:08,225:INFO:save_model(model=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['Income', 'Previous_sales',
+                                             'Num_contacts',
+                                             'Satisfaction_score',
+                                             'Is_peak_hour',
+                                             'Contact_channel_ENC',
+                                             'Type_products_ENC',
+                                             'Contact_hour_round_ENC'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,...
+                 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
+                                        class_weight='balanced_subsample',
+                                        criterion='gini', max_depth=8,
+                                        max_features='log2',
+                                        max_leaf_nodes=None, max_samples=None,
+                                        min_impurity_decrease=0.0005,
+                                        min_samples_leaf=2, min_samples_split=7,
+                                        min_weight_fraction_leaf=0.0,
+                                        n_estimators=160, n_jobs=-1,
+                                        oob_score=False, random_state=8505,
+                                        verbose=0, warm_start=False))],
+         verbose=False), model_name=d:\Proyectos\Teleperformance\TP_Technical_test_DS/models/RF_model_28-01-2024, prep_pipe_=Pipeline(memory=FastMemory(location=C:\Users\almontao\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['Income', 'Previous_sales',
+                                             'Num_contacts',
+                                             'Satisfaction_score',
+                                             'Is_peak_hour',
+                                             'Contact_channel_ENC',
+                                             'Type_products_ENC',
+                                             'Contact_hour_round_ENC'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='mean',
+                                                              verbose='deprecated'))),
+                ('categorical_imputer',
+                 TransformerWrapper(exclude=None, include=[],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='most_frequent',
+                                                              verbose='deprecated')))],
+         verbose=False), verbose=True, use_case=MLUsecase.CLASSIFICATION, kwargs={})
+2024-01-28 22:52:08,225:INFO:Adding model into prep_pipe
+2024-01-28 22:52:08,225:WARNING:Only Model saved as it was a pipeline.
+2024-01-28 22:52:08,292:INFO:d:\Proyectos\Teleperformance\TP_Technical_test_DS/models/RF_model_28-01-2024.pkl saved in current working directory
+2024-01-28 22:52:08,296:INFO:Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['Income', 'Previous_sales',
+                                             'Num_contacts',
+                                             'Satisfaction_score',
+                                             'Is_peak_hour',
+                                             'Contact_channel_ENC',
+                                             'Type_products_ENC',
+                                             'Contact_hour_round_ENC'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,...
+                 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
+                                        class_weight='balanced_subsample',
+                                        criterion='gini', max_depth=8,
+                                        max_features='log2',
+                                        max_leaf_nodes=None, max_samples=None,
+                                        min_impurity_decrease=0.0005,
+                                        min_samples_leaf=2, min_samples_split=7,
+                                        min_weight_fraction_leaf=0.0,
+                                        n_estimators=160, n_jobs=-1,
+                                        oob_score=False, random_state=8505,
+                                        verbose=0, warm_start=False))],
+         verbose=False)
+2024-01-28 22:52:08,296:INFO:save_model() successfully completed......................................
+2024-01-28 22:53:37,599:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-01-28 22:53:37,599:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-01-28 22:53:37,599:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-01-28 22:53:37,599:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-01-28 22:55:27,764:INFO:Initializing load_model()
+2024-01-28 22:55:27,765:INFO:load_model(model_name=d:\Proyectos\Teleperformance\TP_Technical_test_DS/models/RF_model_28-01-2024, platform=None, authentication=None, verbose=True)
+2024-01-28 22:59:02,713:INFO:Initializing predict_model()
+2024-01-28 22:59:02,713:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000016B551709A0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['Income', 'Previous_sales',
+                                             'Num_contacts',
+                                             'Satisfaction_score',
+                                             'Is_peak_hour',
+                                             'Contact_channel_ENC',
+                                             'Type_products_ENC',
+                                             'Contact_hour_round_ENC'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('actual_estimator',
+                 RandomForestClassifier(class_weight='balanced_subsample',
+                                        max_depth=8, max_features='log2',
+                                        min_impurity_decrease=0.0005,
+                                        min_samples_leaf=2, min_samples_split=7,
+                                        n_estimators=160, n_jobs=-1,
+                                        random_state=8505))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000016B10DAE3A0>)
+2024-01-28 22:59:02,713:INFO:Checking exceptions
+2024-01-28 22:59:02,713:INFO:Preloading libraries
+2024-01-28 22:59:02,713:INFO:Set up data.
+2024-01-28 22:59:02,722:INFO:Set up index.
+2024-01-28 23:00:10,107:INFO:Initializing predict_model()
+2024-01-28 23:00:10,107:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000016B5A15B1C0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['Income', 'Previous_sales',
+                                             'Num_contacts',
+                                             'Satisfaction_score',
+                                             'Is_peak_hour',
+                                             'Contact_channel_ENC',
+                                             'Type_products_ENC',
+                                             'Contact_hour_round_ENC'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('actual_estimator',
+                 RandomForestClassifier(class_weight='balanced_subsample',
+                                        max_depth=8, max_features='log2',
+                                        min_impurity_decrease=0.0005,
+                                        min_samples_leaf=2, min_samples_split=7,
+                                        n_estimators=160, n_jobs=-1,
+                                        random_state=8505))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000016B5A152670>)
+2024-01-28 23:00:10,107:INFO:Checking exceptions
+2024-01-28 23:00:10,107:INFO:Preloading libraries
+2024-01-28 23:00:10,107:INFO:Set up data.
+2024-01-28 23:00:10,118:INFO:Set up index.
+2024-01-28 23:00:23,240:INFO:Initializing predict_model()
+2024-01-28 23:00:23,240:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000016B596887F0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['Income', 'Previous_sales',
+                                             'Num_contacts',
+                                             'Satisfaction_score',
+                                             'Is_peak_hour',
+                                             'Contact_channel_ENC',
+                                             'Type_products_ENC',
+                                             'Contact_hour_round_ENC'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('actual_estimator',
+                 RandomForestClassifier(class_weight='balanced_subsample',
+                                        max_depth=8, max_features='log2',
+                                        min_impurity_decrease=0.0005,
+                                        min_samples_leaf=2, min_samples_split=7,
+                                        n_estimators=160, n_jobs=-1,
+                                        random_state=8505))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000016B56E4FE50>)
+2024-01-28 23:00:23,240:INFO:Checking exceptions
+2024-01-28 23:00:23,240:INFO:Preloading libraries
+2024-01-28 23:00:23,240:INFO:Set up data.
+2024-01-28 23:00:23,240:INFO:Set up index.
+2024-01-28 23:01:33,497:INFO:Initializing predict_model()
+2024-01-28 23:01:33,497:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000016B596798B0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['Income', 'Previous_sales',
+                                             'Num_contacts',
+                                             'Satisfaction_score',
+                                             'Is_peak_hour',
+                                             'Contact_channel_ENC',
+                                             'Type_products_ENC',
+                                             'Contact_hour_round_ENC'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('actual_estimator',
+                 RandomForestClassifier(class_weight='balanced_subsample',
+                                        max_depth=8, max_features='log2',
+                                        min_impurity_decrease=0.0005,
+                                        min_samples_leaf=2, min_samples_split=7,
+                                        n_estimators=160, n_jobs=-1,
+                                        random_state=8505))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000016B57EF6D30>)
+2024-01-28 23:01:33,497:INFO:Checking exceptions
+2024-01-28 23:01:33,497:INFO:Preloading libraries
+2024-01-28 23:01:33,497:INFO:Set up data.
+2024-01-28 23:01:33,510:INFO:Set up index.
+2024-01-28 23:09:09,076:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-01-28 23:09:09,076:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-01-28 23:09:09,076:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-01-28 23:09:09,076:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-01-28 23:09:10,253:INFO:Initializing load_model()
+2024-01-28 23:09:10,254:INFO:load_model(model_name=d:\Proyectos\Teleperformance\TP_Technical_test_DS/models/RF_model_28-01-2024, platform=None, authentication=None, verbose=True)
