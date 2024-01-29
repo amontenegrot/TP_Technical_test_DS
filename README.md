@@ -28,22 +28,3 @@ Contamos con una base de datos con las siguientes variables, demográficas y de 
     * ¿Qué resultados encuentra?
     * ¿Que recomendaciones puede entregar al área de operaciones quienes son los que implementan la estrategia? 
 6.	Realice una presentación en donde resuma los puntos anteriores (Es una presentación dirigida a un área de negocio).
-
-# Repository structure
-The current structure of the repository is essentially the structure recommended by the event organizers with some minor additions:
-
-```
-Shimoku_Technical_Test_DS
-|   .env
-|   .gitignore
-|   README.md
-|   requirements.txt
-|
-+---data
-|       Sales_outbound.xlsx
-|       Sales_outbound_New.xlsx
-|
-+---src
-|
-\---venv
-```

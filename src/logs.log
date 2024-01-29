@@ -10408,3 +10408,28 @@ AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
 'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
 2024-01-28 23:09:10,253:INFO:Initializing load_model()
 2024-01-28 23:09:10,254:INFO:load_model(model_name=d:\Proyectos\Teleperformance\TP_Technical_test_DS/models/RF_model_28-01-2024, platform=None, authentication=None, verbose=True)
+2024-01-28 23:09:10,990:INFO:Initializing predict_model()
+2024-01-28 23:09:10,990:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000002A4D1EAA850>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['Income', 'Previous_sales',
+                                             'Num_contacts',
+                                             'Satisfaction_score',
+                                             'Is_peak_hour',
+                                             'Contact_channel_ENC',
+                                             'Type_products_ENC',
+                                             'Contact_hour_round_ENC'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('actual_estimator',
+                 RandomForestClassifier(class_weight='balanced_subsample',
+                                        max_depth=8, max_features='log2',
+                                        min_impurity_decrease=0.0005,
+                                        min_samples_leaf=2, min_samples_split=7,
+                                        n_estimators=160, n_jobs=-1,
+                                        random_state=8505))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000002A48DB0F430>)
+2024-01-28 23:09:10,990:INFO:Checking exceptions
+2024-01-28 23:09:10,990:INFO:Preloading libraries
+2024-01-28 23:09:10,990:INFO:Set up data.
+2024-01-28 23:09:10,998:INFO:Set up index.
